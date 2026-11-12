@@ -17,7 +17,7 @@ PASS: renaido
 
 ### 2 Bases de Datos
 ![bases](/capturas/4.png)
-
+(luego cree otra que se llama demo a secas, es donde realicé las capturas)
 
 ### PgAdmin
 ![pgAdmin](/capturas/pg1.png)
