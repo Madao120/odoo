@@ -65,10 +65,19 @@ Captura de cada tipo de producto
 ### Presupuesto de cliente - pedido de venta
 ![con inventario](/capturas/recorrido_presupuesto.png)
 
+### Facturación con IVA reflejado
+![con inventario](/capturas/factura_iva_bien.png)
+Quiero aclarar que esta es una corrección, por ello no es la misma factura que aparecerá más a delante, en esta imagen el iva si que se refleja correctamente tanto en el bien como en el servicio.
+
+### facturación impreso
+![con inventario](/capturas/recorrdo_impreso.png)
+
+### Facturación PAGADO
+![con inventario](/capturas/recorrido_pagado.png)
+
 
 ### Facturación - Proveedor
-
-![con inventario](/capturas/recorrido_presupuesto_facturar.png)
+![con inventario](/capturas/facturacion%20proveedor.png)
 
 ### Facturación - Cliente
 ![con inventario](/capturas/facturacion_cliente.png)
@@ -84,6 +93,18 @@ Captura de cada tipo de producto
 
 ## Ejercicio 4
 
+### Activar modo desarrollador
+
+#### Mediante Ruta
+Se deberá de poner lo siguiente en la url
+http://localhost:8069/odoo?debug=1
+
+![con inventario](/capturas/activar_desarrollador1.png)
+
+#### Mediante Ajustes
+Debemos de ir a Ajustes, y en la primera pestaña bajar a la parte más baja de la misma.
+![alt text](/capturas/activar_desarrollador2.png)
+
 ### Desarrollador - Contacto
 ![con inventario](/capturas/desarrollador_contacto.png)
 - Campo1: Nombre
@@ -95,14 +116,18 @@ Captura de cada tipo de producto
 ### Desarrollador - Factura
 ![con inventario](/capturas/desarrollador_factura.png)
 - Campo1: Cliente
-- Nombre: parthner_id
+- Nombre: partner_id
 -------------------
-- Campo2: Fecha de Creación
-- Nombre: create_date
+- Campo2: Moneda
+- Nombre: currency_id
 
 ## Incidencias
 condition: service_healthy
+
 ### 1: depends_on
+*NO LO PONGO EN TABLA POR EL FORMATO DE EXPLICACIÓN
+
+Fecha: 4/11/2026
 
 Al tratar de iniciar el docker, me salió este error
         validating /home/dam26/Diego/SXE/odoo/docker-compose.yml: services.odoo.depends_on must be a list
@@ -123,8 +148,11 @@ Ahora (bien):
             db:
                 condition: service_healthy
 ### 2: Contraseña
-Al asignar la contraseña en el compose pensaba que era la de postgress, ya que es la que habia asignado en el campo PASSWORD, pero la contraseña es la de odoo.conf, el campo admin_password.
+| Fecha | Síntoma / Problema | Causa | Solución |
+| :--- | :--- | :--- | :--- |
+| 10/11/2026 | Error al iniciar sesión en odoo | Al asignar la contraseña en el compose pensaba que era la de postgress, ya que es la que habia asignado en el campo PASSWORD | pero la contraseña es la de odoo.conf, el campo admin_password. |
+
 
 ## USO DE IA
- Esta vez solo la utilicé para ver los fallos al iniciar el odoo.<br>
+ Esta vez solo la utilicé para ver los fallos al iniciar el odoo, esto con **chatgpt** en preguntas puntuales.<br>
  Básicamente las incidencias mencionadas, donde le pasé el docker-compose una vez hecho para que me dijera que estaba mal tabulado un campo a demás de que le pregunté cuando utilicé mal la contraseña, donde me dijo que no era la de postgress.
